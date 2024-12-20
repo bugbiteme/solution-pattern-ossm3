@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
+    <title>Solution Pattern: Solution Patterns - Optimizing Traffic and Observability with OpenShift Service Mesh 3 :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/03-demo.html">
     <link rel="prev" href="02-architecture.html">
     <link rel="next" href="developer-resources.html">
@@ -162,7 +162,7 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Solution Pattern: Name Template</h1>
+<h1 class="page">Solution Pattern: Solution Patterns - Optimizing Traffic and Observability with OpenShift Service Mesh 3</h1>
 <h1 id="_see_the_solution_in_action" class="sect0"><a class="anchor" href="#_see_the_solution_in_action"></a><a class="link" href="#_see_the_solution_in_action">See the Solution in Action</a></h1>
 <div class="openblock partintro">
 <div class="content">
@@ -190,9 +190,9 @@ Before walking through the solution, ensure all necessary prerequisites are in p
 <div class="paragraph">
 <p>To check if you have the CLI tools, open your terminal and use the following command:</p>
 </div>
-<div class="listingblock console">
+<div class="listingblock console-input">
 <div class="content">
-<pre>oc version</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">oc version</code></pre>
 </div>
 </div>
 </div>
@@ -363,7 +363,7 @@ Before walking through the solution, ensure all necessary prerequisites are in p
 </li>
 </ul>
 </div>
-<div class="listingblock console">
+<div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">git clone https://github.com/bugbiteme/ossm-3-demo.git</code></pre>
 </div>
@@ -377,7 +377,7 @@ Before walking through the solution, ensure all necessary prerequisites are in p
 <div class="paragraph">
 <p>Run the following script to install the listed Operators and Gateway API, and wait for it to complete:</p>
 </div>
-<div class="listingblock console">
+<div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">sh ./install_operators.sh</code></pre>
 </div>
@@ -391,7 +391,7 @@ Before walking through the solution, ensure all necessary prerequisites are in p
 <div class="paragraph">
 <p>Run the following script to implement Service Mesh and the example applications, and wait for it to complete:</p>
 </div>
-<div class="listingblock console">
+<div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">sh ./install_ossm3_demo.sh</code></pre>
 </div>
@@ -433,10 +433,10 @@ Kiali route is: https://kiali-istio-system.apps.&lt;domain&gt;
 <div class="paragraph">
 <p>You can access the main bookinfo page using the Ingress route shown at the end of the demo install script, or run the command:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>export INGRESSHOST=$(oc get route istio-ingressgateway -n istio-ingress -o=jsonpath='{.spec.host}')
-echo http://${INGRESSHOST}/productpage</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">export INGRESSHOST=$(oc get route istio-ingressgateway -n istio-ingress -o=jsonpath='{.spec.host}')
+echo http://$INGRESSHOST/productpage</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -450,9 +450,9 @@ echo http://${INGRESSHOST}/productpage</pre>
 <div class="paragraph">
 <p><code>INGRESSHOST</code> is the URL provided by the Istio Gateway <code>istio-ingressgateway</code>, deployed in the <code>istio-ingress</code> namespace.</p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>oc get deployment -n istio-ingress istio-ingressgateway -o yaml</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">oc get deployment -n istio-ingress istio-ingressgateway -o yaml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -649,10 +649,10 @@ Containers:
 <div class="paragraph">
 <p>To obtain the Kiali URL, you can run the following commands:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export KIALI_HOST=$(oc get route kiali -n istio-system -o=jsonpath='{.spec.host}')
-echo https://${KIALI_HOST}</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">export KIALI_HOST=$(oc get route kiali -n istio-system -o=jsonpath='{.spec.host}')
+echo https://KIALI_HOST</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -805,12 +805,12 @@ image::bookinfo-01.svg[width=100%]</p>
 <div class="paragraph">
 <p>You can access the front end of the RestAPI using the Ingress route shown at the end of the demo install script, or run the command:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>export GATEWAY=$(oc get gateway hello-gateway -n istio-ingress -o template --template='{{(index .status.addresses 0).value}}')
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">export GATEWAY=$(oc get gateway hello-gateway -n istio-ingress -o template --template='{{(index .status.addresses 0).value}}')
 
 curl -s $GATEWAY/hello
-curl -s $GATEWAY/hello-service</pre>
+curl -s $GATEWAY/hello-service</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -820,9 +820,9 @@ curl -s $GATEWAY/hello-service</pre>
 <div class="paragraph">
 <p>Before we continue, be sure to run the script</p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>sh scripts/generate-traffic.sh</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">sh scripts/generate-traffic.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -966,10 +966,10 @@ spec:
 <img src="_images/rest-01.png" alt="rest 01" width="75%">
 </div>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>export GATEWAY=$(oc get gateway hello-gateway -n istio-ingress -o template --template='{{(index .status.addresses 0).value}}')
-curl -s $GATEWAY/hello-service</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">export GATEWAY=$(oc get gateway hello-gateway -n istio-ingress -o template --template='{{(index .status.addresses 0).value}}')
+curl -s $GATEWAY/hello-service</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1134,9 +1134,9 @@ spec:
 <div class="paragraph">
 <p>In the second terminal, run the script <code>canary-rollout.sh</code></p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>sh scripts/canary-rollout.sh</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">sh scripts/canary-rollout.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1168,9 +1168,9 @@ spec:
 <div class="paragraph">
 <p>If you would like to roll traffic back to <code>v1</code>, run the command:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock console-input">
 <div class="content">
-<pre>oc apply -k ./resources/application/kustomize/overlays/pod</pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">oc apply -k ./resources/application/kustomize/overlays/pod</code></pre>
 </div>
 </div>
 </div>
