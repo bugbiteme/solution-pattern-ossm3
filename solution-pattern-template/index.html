@@ -58,7 +58,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html" class=" query-params-link">Template Tutorial</a></h3>
+    <h3 class="title"><a href="index.html" class=" query-params-link">OpenShift Service Mesh 3</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -97,48 +97,28 @@
     <a class="nav-link" href="03-demo.html">3. See the Solution in Action</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
+    <a class="nav-link" href="03-demo.html#_demonstration">3.1. Prerequisites</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="03-demo.html#_run_the_demonstration">3.2. Run this demonstration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_before_getting_started">3.3. Pre-requisites</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_installing_the_demo">3.4. Installing the demo</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_walkthrough_guide">3.5. Walkthrough guide</a>
   </li>
 </ul>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html">4. Workshop</a>
+  <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_installing_the_environment">4.3. Installing the environment</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
-  </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="developer-resources.html">5. Developer Resources</a>
+    <a class="nav-link" href="developer-resources.html">4. Developer Resources</a>
   </li>
   <li class="nav-item" data-depth="1">
     <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">Explore Red Hat Solution Patterns</a></span>
@@ -150,12 +130,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Template Tutorial</span>
+    <span class="title">OpenShift Service Mesh 3</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Template Tutorial</span>
+      <span class="title">OpenShift Service Mesh 3</span>
       <ul class="versions">
         <li class="version is-current">
           <a href="index.html">master</a>
@@ -173,25 +153,89 @@
   <a href="index.html" class="home-link is-current"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">Template Tutorial</a></li>
+    <li><a href="index.html">OpenShift Service Mesh 3</a></li>
     <li><a href="index.html">1. Home page</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-solution-patterns/solution-pattern-website-template/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/bugbiteme/solution-pattern-ossm3/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
 <h1 class="page">Solution Patterns: Template Name</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>A brief introduction of this solution pattern.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/mesh-cover-page.png" alt="mesh cover page" width="75%">
+</div>
 </div>
 <div class="paragraph">
-<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</em></p>
+<p>Red Hat OpenShift Service Mesh adds a transparent layer on existing distributed applications without requiring any changes to the application code. The mesh introduces an easy way to create a network of deployed services that provides discovery, load balancing, service-to-service authentication, failure recovery, metrics, and monitoring. A service mesh also provides more complex operational functionality, including A/B testing, canary releases, access control, and end-to-end authentication.</p>
 </div>
 <div class="paragraph">
-<p><strong>Contributors:</strong> <em>Your Name(s) here (can add links to your profile)</em></p>
+<p>Microservice architectures split the work of enterprise applications into modular services (deployed as pods in Kuberntetes), which can make scaling and maintenance easier. However, as an enterprise application built on a microservice architecture grows in size and complexity, it can potentially become difficult to understand and manage. Service Mesh can address those architecture problems by capturing or intercepting traffic between services and can modify, redirect, or create new requests to other services in a way that is independant from business logic.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/mesh-diagram-01.png" alt="mesh diagram 01" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Included with OpenShift Container Platform Subscription</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/mesh-diagram-02.png" alt="mesh diagram 02" width="75%">
+</div>
+</div>
+<div class="paragraph">
+<p>A key benefit of OpenShift Service Mesh is that it, along with most of its critical dependencies (e.g., Istio, Jaeger, Kiali, Prometheus), is included and fully supported with the OpenShift Container Platform subscription. This integration ensures:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Enterprise Support</strong>: Comprehensive support from Red Hat for both OpenShift Service Mesh and its dependencies.</p>
+</li>
+<li>
+<p><strong>Seamless Upgrades</strong>: Coordinated updates with the OpenShift platform, ensuring compatibility and reducing operational overhead.</p>
+</li>
+<li>
+<p><strong>Cost Efficiency</strong>: Organizations can leverage advanced microservices management capabilities without incurring additional licensing or support costs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By standardizing these capabilities at the platform level and bundling them into the OpenShift subscription, OpenShift Service Mesh enables teams to build, scale, and manage microservices architectures with minimal complexity and maximum support. This allows developers to return their focus to innovation and delivering business value.</p>
+</div>
+<div class="paragraph">
+<p>This solution brief demonstrates how OpenShift Service Mesh 3 empowers platform teams to manage traffic flows with precision, including showcasing a canary deployment for safe, incremental rollouts. Additionally, it highlights how observability insights help detect and resolve issues quickly, ensuring reliability and resiliency across hybrid cloud environments.</p>
+</div>
+ <br>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>OpenShift Service Mesh 3.0</strong> and <strong>Gateway API</strong> in OpenShift are Technology Preview features only at this time.</p>
+</div>
+<div class="paragraph">
+<p>Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://access.redhat.com/support/offerings/techpreview">More details about Technology Preview terms</a></p>
+</div>
+<div class="paragraph">
+<p>This Solution Pattern will update as supported releases become generally available (GA).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Contributors:</strong> <a href="https://github.com/bugbiteme">Leon Levy</a> - Red Hat OpenShift Specialist Solution Architect</p>
 </div>
  <br>
 <div class="admonitionblock note">
@@ -219,10 +263,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>xyz</p>
+<p><strong>Traffic Management</strong>: Control the flow of traffic and API calls between services, make calls more reliable, and make the network more robust in the face of adverse conditions.</p>
 </li>
 <li>
-<p>xyz</p>
+<p><strong>Service Identity and Security</strong>: Provide services in the mesh with a verifiable identity and provide the ability to protect service traffic as it flows over networks of varying degrees of trustworthiness.</p>
+</li>
+<li>
+<p><strong>Policy Enforcement</strong>: Apply organizational policy to the interaction between services, ensure access policies are enforced and resources are fairly distributed among consumers. Policy changes are made by configuring the mesh, not by changing application code.</p>
+</li>
+<li>
+<p><strong>Telemetry</strong>: Gain understanding of the dependencies between services and the nature and flow of traffic between them, providing the ability to quickly identify issues.</p>
 </li>
 </ul>
 </div>
@@ -232,7 +282,18 @@
 <h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a><a class="link" href="#_the_story_behind_this_solution_pattern">2. The story behind this solution pattern</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A description of the story that was used to build the demo and architectures of this SP.</p>
+<p><strong>Canary Deployment with Traffic Splitting</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/canary-01.png" alt="canary 01" width="75%">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Objective</strong>: Safely roll out a new version of a microservice while monitoring its performance.</p>
+</div>
+<div class="paragraph">
+<p>A retail company has an application running on OpenShift that handles online orders. The development team wants to deploy a new version (<code>v2</code>) of their <code>hello-service</code> RestAPI without disrupting users of the current version (<code>v1</code>).</p>
 </div>
 </div>
 </div>
@@ -240,7 +301,29 @@
 <h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a><a class="link" href="#_the_solution">3. The Solution</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is a summary of the solution</p>
+<p>Using OpenShift Service Mesh 3 with the Kubernetes Gateway API, they configure a traffic-splitting policy to direct 90% of traffic to <code>v1</code> and 10% to <code>v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>With integrated observability tools like <strong>Jaeger</strong> and <strong>Kiali</strong>, the team monitors traffic flow, latency, and error rates in real-time for <code>v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once performance metrics confirm stability, they incrementally increase traffic to <code>v2</code> until it handles 100% of requests, ensuring a smooth transition.</p>
+</div>
+<div class="paragraph">
+<p>This pattern aims to cover the following use cases of OpenShift Service Mesh</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Traffic Control for Continuous  Delivery</strong>: Enable safe progressive delivery with traffic management across application versions</p>
+</li>
+<li>
+<p><strong>Application Observability</strong>:  Out of the box application metrics, request logs and distributed traces for system observability</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All while encrypting service-to-service communication with default mTLS</p>
 </div>
 </div>
 </div>

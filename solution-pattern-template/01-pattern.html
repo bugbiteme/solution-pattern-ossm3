@@ -57,7 +57,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html" class=" query-params-link">Template Tutorial</a></h3>
+    <h3 class="title"><a href="index.html" class=" query-params-link">OpenShift Service Mesh 3</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -96,48 +96,28 @@
     <a class="nav-link" href="03-demo.html">3. See the Solution in Action</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
+    <a class="nav-link" href="03-demo.html#_demonstration">3.1. Prerequisites</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="03-demo.html#_run_the_demonstration">3.2. Run this demonstration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_before_getting_started">3.3. Pre-requisites</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_installing_the_demo">3.4. Installing the demo</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-demo.html#_walkthrough_guide">3.5. Walkthrough guide</a>
   </li>
 </ul>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html">4. Workshop</a>
+  <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_installing_the_environment">4.3. Installing the environment</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
-  </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="developer-resources.html">5. Developer Resources</a>
+    <a class="nav-link" href="developer-resources.html">4. Developer Resources</a>
   </li>
   <li class="nav-item" data-depth="1">
     <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">Explore Red Hat Solution Patterns</a></span>
@@ -149,12 +129,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Template Tutorial</span>
+    <span class="title">OpenShift Service Mesh 3</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Template Tutorial</span>
+      <span class="title">OpenShift Service Mesh 3</span>
       <ul class="versions">
         <li class="version is-current">
           <a href="index.html">master</a>
@@ -172,7 +152,7 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-solution-patterns/solution-pattern-website-template/edit/main/documentation/modules/ROOT/pages/01-pattern.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/bugbiteme/solution-pattern-ossm3/edit/main/documentation/modules/ROOT/pages/01-pattern.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -180,7 +160,18 @@
 <h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a>The story behind this solution pattern</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A description of the story that was used to build the demo and architectures of this SP.</p>
+<p><strong>Canary Deployment with Traffic Splitting</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/canary-01.png" alt="canary 01" width="75%">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Objective</strong>: Safely roll out a new version of a microservice while monitoring its performance.</p>
+</div>
+<div class="paragraph">
+<p>A retail company has an application running on OpenShift that handles online orders. The development team wants to deploy a new version (<code>v2</code>) of their <code>hello-service</code> RestAPI without disrupting users of the current version (<code>v1</code>).</p>
 </div>
 </div>
 </div>
@@ -188,7 +179,29 @@
 <h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a>The Solution</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is a summary of the solution</p>
+<p>Using OpenShift Service Mesh 3 with the Kubernetes Gateway API, they configure a traffic-splitting policy to direct 90% of traffic to <code>v1</code> and 10% to <code>v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>With integrated observability tools like <strong>Jaeger</strong> and <strong>Kiali</strong>, the team monitors traffic flow, latency, and error rates in real-time for <code>v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once performance metrics confirm stability, they incrementally increase traffic to <code>v2</code> until it handles 100% of requests, ensuring a smooth transition.</p>
+</div>
+<div class="paragraph">
+<p>This pattern aims to cover the following use cases of OpenShift Service Mesh</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Traffic Control for Continuous  Delivery</strong>: Enable safe progressive delivery with traffic management across application versions</p>
+</li>
+<li>
+<p><strong>Application Observability</strong>:  Out of the box application metrics, request logs and distributed traces for system observability</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All while encrypting service-to-service communication with default mTLS</p>
 </div>
 </div>
 </div>
